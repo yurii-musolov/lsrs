@@ -50,7 +50,7 @@ fn main() {
         Err(err) => error_handler(err),
     };
 
-    while stack.len() > 0 {
+    while !stack.is_empty() {
         let dir_entry = stack.last_mut().unwrap();
         match dir_entry.next() {
             Some(Ok(dir_entry)) => {
@@ -58,7 +58,7 @@ fn main() {
                 let is_dir = path.is_dir();
                 let path_display = path.as_path();
 
-                handler(is_dir, relative(&path_display, base_path));
+                handler(is_dir, relative(path_display, base_path));
 
                 if args.recursive && is_dir {
                     match read_dir(path_display) {

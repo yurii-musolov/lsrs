@@ -37,11 +37,14 @@ List information about the FILEs (the current directory by default).
 ### EXAMPLE
 
 ```sh
-# Install CLI util to /home/username/.cargo/bin/lsrs.
+# Install CLI util.
 $ make install
+# or
+$ make all
 
 # Check install path.
 $ which lsrs
+/home/username/.cargo/bin/lsrs
 
 $ lsrs
 file1.txt
