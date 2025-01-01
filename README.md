@@ -88,6 +88,16 @@ file2.md
 $ lsrs --show="car|file" ~
 .cargo
 .profile
+
+$ echo $?
+0
+
+$ lsrs 123
+No such file or directory (os error 2)
+
+$ echo $?
+2
+
 ```
 
 ### Exit status
